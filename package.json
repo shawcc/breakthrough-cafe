@@ -2,7 +2,7 @@
   "name":"breakthrough-cafe",
   "version":"1.0.0",
   "description":"Breakthrough Cafe - AI-powered tech support and consulting platform",
-  "scripts""{
+  "scripts":{
     "dev":"vite",
     "build":"vite build",
     "preview":"vite preview",
