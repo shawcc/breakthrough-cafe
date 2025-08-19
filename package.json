@@ -1,26 +1,26 @@
 {
-  "name": "breakthrough-cafe",
-  "version": "1.0.0",
-  "description": "Breakthrough Cafe - AI-powered tech support and consulting platform",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+  "name":"breakthrough-cafe",
+  "version":"1.0.0",
+  "description":"Breakthrough Cafe - AI-powered tech support and consulting platform",
+  "scripts""{
+    "dev":"vite",
+    "build":"vite build",
+    "preview":"vite preview",
   },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.8.0",
-    "jotai": "^2.8.0",
-    "framer-motion": "^11.9.0",
-    "lucide-react": "^0.294.0"
+  "dependencies":{
+    "react":"^18.2.0",
+    "react-dom":"^18.2.0",
+    "react-router-dom":"^6.8.0",
+    "jotai":"^2.8.0",
+    "framer-motion":"^11.9.0",
+    "lucide-react":"^0.294.0"
   },
-  "devDependencies": {
-    "@types/react": "^18.2.43",
-    "@types/react-dom": "^18.2.17",
-    "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+  "devDependencies":{
+    "@types/react":"^18.2.43",
+    "@types/react-dom":"^18.2.17",
+    "@vitejs/plugin-react":"^4.2.1",
+    "typescript":"^5.2.2",
+    "vite":"^5.0.8"
   }
 }
+  
