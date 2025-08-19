@@ -30,12 +30,12 @@ export const Hero: React.FC = () => {
       {/* 渐变遮罩层 */}
       <div className="absolute inset-0 bg-gradient-to-b from-orange-900/20 via-transparent to-orange-800/30" />
       
-      {/* 温暖光晕效果 */}
+      {/* 更新光晕效果，使用新配色 */}
       <motion.div
         className="absolute inset-0 opacity-30"
         style={{
-          background: `radial-gradient(circle 800px at 60% 40%, rgba(255, 193, 61, 0.3) 0%, transparent 60%),
-                      radial-gradient(circle 600px at 80% 70%, rgba(255, 140, 66, 0.2) 0%, transparent 50%)`,
+          background: `radial-gradient(circle 800px at 60% 40%, rgba(6, 182, 212, 0.3) 0%, transparent 60%),
+                      radial-gradient(circle 600px at 80% 70%, rgba(249, 115, 22, 0.2) 0%, transparent 50%)`,
         }}
         animate={{
           scale: [1, 1.05, 1],
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
 
           <motion.button
             onClick={() => handleNavClick('#services')}
-            className="px-8 py-4 border-2 border-white/90 text-white rounded-full font-semibold text-lg hover:bg-white/20 hover:border-white transition-all duration-300 backdrop-blur-sm shadow-lg"
+            className="px-8 py-4 border-2 border-cyan-400 text-cyan-100 rounded-full font-semibold text-lg hover:bg-cyan-400/20 hover:border-cyan-300 transition-all duration-300 backdrop-blur-sm shadow-lg"
             whileHover={{ y: -3, scale: 1.05 }}
             whileTap={{ y: 0, scale: 0.95 }}
           >
@@ -107,14 +107,14 @@ export const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* 滚动指示器 */}
+      {/* 更新滚动指示器颜色 */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-white/80 rounded-full flex justify-center shadow-lg">
-          <div className="w-1 h-3 bg-white/80 rounded-full mt-2"></div>
+        <div className="w-6 h-10 border-2 border-cyan-300/80 rounded-full flex justify-center shadow-lg">
+          <div className="w-1 h-3 bg-cyan-300/80 rounded-full mt-2"></div>
         </div>
       </motion.div>
     </section>

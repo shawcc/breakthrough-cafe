@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sync": "node one-click-sync.js",
+    "sync:smart": "node smart-sync.js",
+    "sync:protected": "node protected-sync.js",
+    "sync:guide": "node workflow-guide.js",
+    "sync:from-aipa": "node sync-from-aipa.js",
+    "sync:complete": "node sync-complete.js", 
+    "sync:to-github": "node safe-sync.js",
+    "config:diff": "node config-diff.js",
+    "config:backup": "git stash push -m 'Backup local configs'",
+    "workflow:guide": "node workflow-guide.js",
+    "rollback": "node rollback.js"
+  }
+}

@@ -46,8 +46,8 @@ export const Navigation: React.FC = () => {
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/98 backdrop-blur-md shadow-lg'
-          : 'bg-white/95 backdrop-blur-md'
+          ? 'bg-[#011C38]/98 backdrop-blur-md shadow-xl'
+          : 'bg-[#011C38]/95 backdrop-blur-md'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -58,13 +58,20 @@ export const Navigation: React.FC = () => {
           {/* Logo */}
           <Link to="/">
             <motion.div
-              className="text-xl font-bold text-orange-600"
+              className="flex items-center space-x-3"
               whileHover={{ scale: 1.05 }}
             >
-              {getContent({
-                zh: '拨云见日咖啡馆',
-                en: 'Breakthrough Cafe'
-              })}
+              <img 
+                src="https://cdn-tos-cn.bytedance.net/obj/aipa-tos/a5b16aca-9306-40da-823c-1e32f0e588e2/处理图片背景.png"
+                alt="拨云见日 Logo"
+                className="h-10 w-auto object-contain"
+              />
+              <span className="text-xl font-bold text-white hidden sm:block">
+                {getContent({
+                  zh: '拨云见日咖啡馆',
+                  en: 'Breakthrough Cafe'
+                })}
+              </span>
             </motion.div>
           </Link>
 
@@ -75,7 +82,7 @@ export const Navigation: React.FC = () => {
                 {item.href.startsWith('#') ? (
                   <button
                     onClick={() => handleNavClick(item.href)}
-                    className="text-gray-700 hover:text-orange-600 font-medium transition-colors duration-200"
+                    className="text-gray-200 hover:text-cyan-400 font-medium transition-colors duration-200"
                   >
                     {getContent(item.text)}
                   </button>
@@ -84,8 +91,8 @@ export const Navigation: React.FC = () => {
                     to={item.href}
                     className={`font-medium transition-colors duration-200 ${
                       isActiveRoute(item.href)
-                        ? 'text-orange-600 border-b-2 border-orange-600'
-                        : 'text-gray-700 hover:text-orange-600'
+                        ? 'text-cyan-400 border-b-2 border-cyan-400'
+                        : 'text-gray-200 hover:text-cyan-400'
                     }`}
                   >
                     {getContent(item.text)}
@@ -98,13 +105,13 @@ export const Navigation: React.FC = () => {
           {/* Right Side - Language Switcher and Mobile Menu */}
           <div className="flex items-center space-x-4">
             {/* Language Switcher */}
-            <div className="flex bg-gray-100 rounded-full p-1">
+            <div className="flex bg-gray-800/50 backdrop-blur-sm rounded-full p-1 border border-gray-600">
               <button
                 onClick={() => switchLanguage('zh')}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
                   currentLang === 'zh'
-                    ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-sm'
-                    : 'text-gray-600 hover:text-orange-600'
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
+                    : 'text-gray-300 hover:text-cyan-400'
                 }`}
               >
                 中文
@@ -113,8 +120,8 @@ export const Navigation: React.FC = () => {
                 onClick={() => switchLanguage('en')}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-all duration-200 ${
                   currentLang === 'en'
-                    ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-sm'
-                    : 'text-gray-600 hover:text-orange-600'
+                    ? 'bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-lg'
+                    : 'text-gray-300 hover:text-cyan-400'
                 }`}
               >
                 EN
@@ -124,7 +131,7 @@ export const Navigation: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-700 hover:text-orange-600 hover:bg-gray-100 transition-colors duration-200"
+              className="md:hidden p-2 rounded-lg text-gray-200 hover:text-cyan-400 hover:bg-gray-700/50 transition-colors duration-200"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -134,7 +141,7 @@ export const Navigation: React.FC = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <motion.div
-            className="md:hidden py-4 border-t border-gray-200"
+            className="md:hidden py-4 border-t border-gray-600"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -146,7 +153,7 @@ export const Navigation: React.FC = () => {
                   {item.href.startsWith('#') ? (
                     <button
                       onClick={() => handleNavClick(item.href)}
-                      className="block w-full text-left text-gray-700 hover:text-orange-600 font-medium py-2 transition-colors duration-200"
+                      className="block w-full text-left text-gray-200 hover:text-cyan-400 font-medium py-2 transition-colors duration-200"
                     >
                       {getContent(item.text)}
                     </button>
@@ -156,8 +163,8 @@ export const Navigation: React.FC = () => {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`block font-medium py-2 transition-colors duration-200 ${
                         isActiveRoute(item.href)
-                          ? 'text-orange-600'
-                          : 'text-gray-700 hover:text-orange-600'
+                          ? 'text-cyan-400'
+                          : 'text-gray-200 hover:text-cyan-400'
                       }`}
                     >
                       {getContent(item.text)}

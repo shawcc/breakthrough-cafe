@@ -61,7 +61,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer id="contact" className="bg-gray-900 text-white py-16">
+    <footer id="contact" className="bg-[#011C38] text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12"
@@ -72,14 +72,14 @@ export const Footer: React.FC = () => {
         >
           {footerSections.map((section, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <h3 className="text-xl font-bold text-amber-400 mb-6">
+              <h3 className="text-xl font-bold text-cyan-400 mb-6">
                 {getContent(section.title)}
               </h3>
               <div className="space-y-3">
                 {section.content.map((item, itemIndex) => (
                   <motion.p
                     key={itemIndex}
-                    className="text-gray-300 leading-relaxed hover:text-white transition-colors duration-200"
+                    className="text-gray-300 leading-relaxed hover:text-cyan-300 transition-colors duration-200"
                     whileHover={{ x: 5 }}
                   >
                     {getContent(item)}
@@ -91,7 +91,7 @@ export const Footer: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="mt-12 pt-8 border-t border-gray-800 text-center"
+          className="mt-12 pt-8 border-t border-gray-700 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}

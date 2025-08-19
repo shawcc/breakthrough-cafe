@@ -34,7 +34,7 @@ export const Services: React.FC = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-orange-50 to-amber-50">
+    <section id="services" className="py-20 bg-gradient-to-br from-cyan-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -43,7 +43,7 @@ export const Services: React.FC = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl font-bold text-[#011C38] mb-4">
             {getContent({
               zh: 'AI编程辅助 + 免费增值服务',
               en: 'AI Programming Support + Free Value-Added Services'
@@ -64,14 +64,14 @@ export const Services: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {/* 第一个板块 - AI编程技术辅助（突出显示，占据更大空间） */}
+          {/* 第一个板块 - AI编程技术辅助（突出显示） */}
           <motion.div
             className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-10 shadow-xl border-2 border-orange-300 hover:shadow-2xl transition-all duration-300 ring-4 ring-orange-100 relative overflow-hidden"
             variants={cardVariants}
             whileHover={{ y: -10, scale: 1.02 }}
           >
             {/* 突出标签 */}
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-400 via-amber-500 to-orange-500 text-white px-6 py-2 rounded-full text-lg font-bold shadow-lg">
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 text-white px-6 py-2 rounded-full text-lg font-bold shadow-lg">
               {getContent({ zh: '核心服务', en: 'Core Service' })}
             </div>
             
@@ -81,13 +81,13 @@ export const Services: React.FC = () => {
             
             <div className="relative z-10 flex flex-col lg:flex-row items-center lg:items-start gap-8">
               <div className="flex-shrink-0">
-                <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-orange-600 to-amber-700 flex items-center justify-center text-4xl shadow-lg">
+                <div className="w-24 h-24 rounded-3xl bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center text-4xl shadow-lg">
                   💻
                 </div>
               </div>
               
               <div className="flex-1 text-center lg:text-left">
-                <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                <h3 className="text-3xl lg:text-4xl font-bold text-[#011C38] mb-4">
                   {getContent(services[0].title)}
                 </h3>
                 
@@ -97,7 +97,7 @@ export const Services: React.FC = () => {
                 
                 <motion.a
                   href={services[0].link}
-                  className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300"
+                  className="inline-flex items-center px-10 py-4 bg-gradient-to-r from-orange-500 to-amber-600 text-white rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -119,15 +119,15 @@ export const Services: React.FC = () => {
             {services.slice(1).map((service, index) => (
               <motion.div
                 key={service.id}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl p-6 shadow-lg border border-cyan-100 hover:shadow-xl transition-all duration-300"
                 variants={cardVariants}
                 whileHover={{ y: -6, scale: 1.02 }}
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-xl mr-3">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-xl mr-3">
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-xl font-bold text-[#011C38]">
                     {getContent(service.title)}
                   </h3>
                 </div>
@@ -138,7 +138,7 @@ export const Services: React.FC = () => {
                 
                 <motion.a
                   href={service.link}
-                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-300"
+                  className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full font-semibold text-sm hover:shadow-lg transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
