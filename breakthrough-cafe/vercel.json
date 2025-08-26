@@ -1,9 +1,19 @@
 {
   "version": 2,
   "name": "breakthrough-cafe",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
   "builds": [
     {
-      "src": "server/index.ts",
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "api/[...path].ts",
       "use": "@vercel/node",
       "config": {
         "runtime": "nodejs18.x"
@@ -13,7 +23,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server/index.ts"
+      "dest": "/api/[...path].ts"
     },
     {
       "src": "/(.*)",
@@ -21,13 +31,13 @@
     }
   ],
   "functions": {
-    "server/index.ts": {
+    "api/[...path].ts": {
       "maxDuration": 10
     }
   },
   "env": {
     "MONGODB_URI": "@mongodb_uri",
+    "AIPA_API_DOMAIN": "@aipa_api_domain",
     "NODE_ENV": "production"
-  },
-  "outputDirectory": "dist"
+  }
 }
